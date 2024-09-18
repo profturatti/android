@@ -1,0 +1,54 @@
+$ node --version
+    Retorno: v20.17.0
+    Essa é a versão estável LTS desejada para usarmos em sala de aula
+
+$ npx create-expo-app@latest
+    ✔ What is your app named? … primeiro
+    ✔ Downloaded and extracted project files.
+    > npm install
+    ... Processo de inicialização do projeto ...
+    added 1578 packages, and audited 1579 packages in 32s
+
+    148 packages are looking for funding
+
+      run `npm fund` for details
+
+    3 moderate severity vulnerabilities
+
+    To address all issues (including breaking changes), run:
+      npm audit fix --force
+
+    Run `npm audit` for details.
+
+    ✅ Your project is ready!
+
+    To run your project, navigate to the directory and run one of the following npm commands.
+
+    - cd primeiro
+    - npm run android
+    - npm run ios     # You need to use macOS to build the iOS project
+    - npm run web
+
+
+$ cd primeiro
+
+$ code .
+    > o Visual Studio Code, editor de código será aberto com a pasta do projeto carregada
+    Abra um terminal dentro do VSCode e digite:
+
+$ npx expo start
+
+    Aparecerá um QRCode para ser lido com o app ExpoGo em um dispositivo móvel
+    [!] Computador e celular devem estar conectados na mesma rede!
+
+-OU-
+
+Abra no navegador o endereço informado logo abaixo do QRCode como este:
+
+› Web is waiting on http://localhost:8081
+
+Caso a página não abra imediatamente, substitua o endereço para: 127.0.0.1:8081
+
+Pronto! A aplicação pode ser visualizada corretamente.
+
+A sugestão a seguir é identificar os arquivos utilizados no aplicativo e iniciar as modificações para testes.
