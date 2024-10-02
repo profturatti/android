@@ -1,20 +1,26 @@
 # Criando uma API do zero
 
+Oriunda da língua inglesa, a Application Programming Interface (API), que em português significa “Interface de Programação de Aplicativos”, consiste em uma interface que permite a comunicação entre dois sistemas distintos, agregando diversas funções em plataformas, como sites e aplicativos.
+
+Para nosso estudo, vamos criar um diretório para o projeto:
+
+```
 mkdir API
 cd API
 npm init -y          <- vai criar o package.json com a estrutura básica vazia
-   
 npm install express  <- vai instalar a biblioteca express (que oferece recursos web)
+```
 
-Saiba mais em: expressjs.com
+Para estudar mais sobre a biblioteca express, acesse [aqui](expressjs.com)
 
 Neste momento são criados os seguintes conteúdos:
+```
 package.json         <- recebe a dependencia express em seu conteúdo
 package-lock.json    <- backup do package.json
 node_modules         <- diretório que armazena as bibliotecas do projeto
+```
 
-Vamos criar o seguinte arquivo:
-server.js     <- vai ser nosso servidor
+Uma API REST responde a requisições utilizando os verbos HTTP
 
 O servidor responderá a métodos HTTP como:
 - GET    para listar
@@ -23,15 +29,27 @@ O servidor responderá a métodos HTTP como:
 - PATCH  para editar um
 - DELETE para excluir
 
-Como isso funciona? Requisitos
+Como isso funciona? 
+
+Os requisitos são:
 
 1. Tipo de rota/método HTTP
 2. Endereço
 
-no package.json adicionar depois da tag "version"
-"type": "module",   <- isto permitirá o uso de import ao invés do request (descontinuada)
+Por exemplo, ao digitar o seguinte endereço no navegador: `http://www.google.com`
 
---server.js--
+A página de pesquisa virá como uma resposta do método GET
+
+Vamos agora criar nosso servidor para responder as requisições da API deste projeto
+
+Faremos um ajuste no arquivo `package.json` adicionando depois da tag "version"
+```
+"type": "module",
+```
+para permitir o uso da expressão `import` ao invés do request (descontinuada)
+
+## Arquivo: `server.js` (primeira versão)
+```
 import express from 'express'
 
 const app = express()
@@ -41,46 +59,46 @@ app.get('/', (request, response) => {
 })
 
 app.listen(3000)
----
+```
 
-Vamos rodar o servidor:
+Para testar nosso servidor, execute no terminal: `node server.js`
 
-$ node server.js
-
-Abra o navegador e acesse: localhost:port -> 127.0.0.1:3000
+Abra o navegador e acesse: `127.0.0.1:3000`
 
 O padrão de requisições no navegador é GET. Mas como posso testar outros métodos?
 
-Uma das formas possíveis é através da extensão: Thunder Client - Lightweight Rest API Client
+Sim! Mas o padrão de respostas do navegador é para métodos GET.
 
-Após instalada a extensão, um icone é adicionado na lateral do VSCode para criar requests e efetuar os testes desejados
+Dentre diversas ferramentas disponíveis, uma extensão do VSCode pode nos ser muito útil. Trata-se da extensão: `Thunder Client - Lightweight Rest API Client`
 
-A cada modificação no arquivo "server.js" é necessário reiniciar o programa para aplicar as atualizações.
+Após instalada a extensão, um icone é adicionado na lateral do VSCode para criar requests e efetuar os testes desejados.
 
-Uma forma de automatizar essa atualização é chamando o programa com o parametro watch
+A cada modificação no arquivo `server.js` é necessário reiniciar o programa para aplicar as atualizações.
 
-$ node --watch server.js
+Uma forma de automatizar essa atualização sem precisar parar o servidor utilizando CTRL+C e chamando o programa novamente é utilizar o parametro watch: `node --watch server.js`
 
 Para receber parâmetros nas requisições, temos basicamente três formas:
 
 1. Query Params (GET) - para consultas
-
+```
 servidor/rota/usuarios?id=1&nome=Joao
-
+```
 2. Route Params (GET, PUT, DELETE) - buscar, editar ou apagar algo especifico
-
+```
 servidor/usuarios/25/usuarios
-
+```
 3. Body Params (POST e PUT)
-
+```
 {
   "nome": "Joao",
   "id": 25
 }
+```
 
-## Atualizando o server.js
+Utilizando o thunder client, vamos inserir uma informação utilizando `body params` e o console para visualizar o resultado.
 
----server.js---
+## Arquivo: `server.js` (segunda versão)
+```
 import express from 'express'
 
 const app = express()
@@ -102,16 +120,19 @@ app.get('/', (request, response) => {
 })
 
 app.listen(3000)
----
+```
 
-HTTP Status
+Note que o código acima retorna um `status`. Resumidamente são HTTP Status:
 - 2xx <- Sucesso
 - 4xx <- Erro cliente
 - 5xx <- Erro servidor
 
+Para uma visão completa sobre os códigos de estado, acesse [aqui](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)
+
 Agora vamos colocar o conteudo visualizado no post dentro do array
 
----server.js---
+## Arquivo: `server.js` (terceira versão)
+```
 import express from 'express'
 
 const app = express()
@@ -133,11 +154,12 @@ app.get('/', (request, response) => {
 })
 
 app.listen(3000)
----
+```
 
-Utilizando os estados de resposta HTTP
+Aprimorando o uso dos estados de resposta HTTP
 
----server.js---
+## Arquivo: `server.js` (quarta versão)
+```
 import express from 'express'
 
 const app = express()
@@ -148,7 +170,6 @@ const users = []
 app.post('/usuarios', (req, res) => {
   users.push(req.body)
   res.status(201).json(req.body)
-
 })
 
 app.get('/usuarios', (req, res) => {
@@ -160,58 +181,74 @@ app.get('/', (request, response) => {
 })
 
 app.listen(3000)
----
+```
 
 Agora falta a parte de edição e deleção de dados
-Vamos utilizar o mongoDB: https://www.mongodb.com/pt-br
 
-Comece agora mesmo
-Crie uma conta
-Verifique seu email para ativar a conta na plataforma
-No dashboard, menu a esquerda, Deployment > Database > Build a cluster
-Escolha "M0 Free"
-Atribua um nome: Users (por exemplo)
-Provider (pode deixar AWS que é o padrão)
-Region (pode deixar Sao Paulo) <- Quanto mais próximo de sua localidade real, mais rápido
-Não é necessário efetuar outras configurações
-
-Clique no botão "Create Deployment"
+Vamos utilizar o [mongoDB](https://www.mongodb.com/pt-br) seguindo estes passos:
+- Comece agora mesmo (link)
+- Crie uma conta
+- Verifique seu email para ativar a conta na plataforma
+- No dashboard, menu a esquerda, Deployment > Database > Build a cluster
+- Escolha "M0 Free"
+- Atribua um nome: Users (por exemplo)
+- Provider (pode deixar AWS que é o padrão)
+- Region (pode deixar Sao Paulo) <- Quanto mais próximo de sua localidade real, mais rápido
+- Não é necessário efetuar outras configurações
+- Clique no botão "Create Deployment"
 
 Se mostrar algum custo, clique para editar e refaça a configuração escolhendo "M0"
 
 A seguir, uma janela flutuante mostrará outras configurações.
+
 Em 1. Add a connection IP address, escolha "Allow Access from Anywhere"
+
 Em 2. Create a database user, é informado que o usuário inicial é "atlasAdmin" e que é necessário definir um usuário e senha para acesso ao banco de dados. Preencha esses campos e faça uma cópia pra você!
 
-$ npm install mongodb
+Instale a biblioteca: `npm install mongodb`
 
 Utilizaremos o Prisma para acessar o banco de dados
-
-$ npm install prisma --save-dev
-
+```
+$ npm install prisma --save-dev`
 $ npx prisma init
+```
 
-Edite o arquivo ".env" e substitua a string de conexao para:
+Edite o arquivo `.env` e substitua a string de conexao para:
 
+```
 mongodb+srv://<seu_usuario:<senha>@users.svuaf.mongodb.net/<nome_do_cluster>?retryWrites=true&w=majority&appName=Users
+```
 
-Em prisma>schema.prisma
+Na pasta do projeto, subpasta `prisma`, edite o arquivo `schema.prisma`.
+```
+generator client {
+  provider = "prisma-client-js"
+}
 
-<screenshots>
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
 
-No console
+model User {
+  id      String  @id @default(auto()) @map("_id") @db.ObjectId
+  email   String  @unique
+  name    String
+  age     String
+}
+```
 
-$ npx prisma db push
+No console execute: `npx prisma db push`
 
 Ocorrendo sucesso, vamos usar o cliente do prisma
-
+```
 $ npm install @prisma/client
 
 $ npx prisma studio <- abre no navegador uma visualização do banco de dados
+```
 
-Atualizaremos o server para usar o prisma
-
----server.js---
+## Arquivo: `server.js` (quinta versão)
+```
 import express from 'express'
 import { PrismaClient } form '@prisma/client'
 
@@ -264,11 +301,12 @@ app.get('/', (request, response) => {
 })
 
 app.listen(3000)
----
+```
 
 Agora inserindo uma busca na listagem de usuários através de query params
 
----server.js---
+## Arquivo: `server.js` (sexta versão)
+```
 import express from 'express'
 import { PrismaClient } form '@prisma/client'
 
@@ -333,4 +371,6 @@ app.get('/', (request, response) => {
 })
 
 app.listen(3000)
----
+```
+
+Pronto! Façamos os testes para verificar os end-points do servidor.
