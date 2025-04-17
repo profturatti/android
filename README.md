@@ -2,7 +2,7 @@
 PROGRAMAÇÃO PARA DISPOSITIVOS MÓVEIS EM ANDROID
 (ReactNative+EXPO)
 
-|--------|--------
+
 |  DATA  | Descrição
 |--------|--------
 | 19.fev | Apresentação da disciplina, métodos de avaliação, simulados, avaliações e apresentação de projetos.
