@@ -21,9 +21,9 @@ PROGRAMAÇÃO PARA DISPOSITIVOS MÓVEIS EM ANDROID
 | 03.abr |
 | 09.abr |
 | 10.abr |
-| 16.abr |
-| 17.abr |
-| 23.abr |
-| 24.abr |
+| 16.abr | Banco de dados SQLite/Supabase(PostgreSQL) - Modelos da documentação do projeto
+| 17.abr | Banco de dados SQLite/Supabase(PostgreSQL) - Modelos da documentação do projeto
+| 23.abr | Banco de dados SQLite/Supabase(PostgreSQL) - Apresentação user:login/profile
+| 24.abr | Banco de dados SQLite/Supabase(PostgreSQL) - Apresentação user:login/profile
 | 30.abr |
 | 01.mai |
