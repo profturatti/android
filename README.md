@@ -6,8 +6,7 @@ PROGRAMAÇÃO PARA DISPOSITIVOS MÓVEIS EM ANDROID
 
 [Roteiro mínimo](https://github.com/profturatti/android/blob/main/roteiroMinimo.md) | 
 [Documentação Necessária](https://github.com/profturatti/android/tree/main/documentos) | 
-[Exemplos](https://github.com/profturatti/android/tree/main/exemplos)
-
+[Exemplos](https://github.com/profturatti/android/tree/main/exemplos) |
 [Grupos]()
 
 |  DATA  | Descrição
