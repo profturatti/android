@@ -44,10 +44,10 @@ PROGRAMAÇÃO PARA DISPOSITIVOS MÓVEIS EM ANDROID
 | 04.jun |
 | 05.jun | Simulado 2 - Presencial
 | 11.jun | Simulado 2 - Presencial
-| 12.jun | AV disciplinas Presenciais - Entrega e Apresentação Final do PROJETO EXTENSIONISTA
-| 18.jun | AV disciplinas Presenciais - Entrega e Apresentação Final do PROJETO EXTENSIONISTA
+| 12.jun | [AV] PROJETO EXTENSIONISTA - Entrega (GIT) e Apresentação Final
+| 18.jun | [AV] PROJETO EXTENSIONISTA - Entrega (GIT) e Apresentação Final
 | 19.jun | FERIADO
-| 25.jun | AVS disciplinas Presenciais - Prazo final dos projetos (com prejuízo de nota)
-| 26.jun | AVS disciplinas Presenciais - Prazo final dos projetos (com prejuízo de nota)
+| 25.jun | [AVS] Último Prazo para entrega dos projetos (com prejuízo de nota)
+| 26.jun | [AVS] Último Prazo para entrega dos projetos (com prejuízo de nota)
 | 02.jul | Fim do Semestre
 | 03.jul | Fim do Semestre
