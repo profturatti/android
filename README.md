@@ -31,22 +31,22 @@ PROGRAMAÇÃO PARA DISPOSITIVOS MÓVEIS EM ANDROID
 | 17.abr | Banco de dados SQLite/Supabase(PostgreSQL) - Modelos da documentação do projeto
 | 23.abr | Banco de dados SQLite/Supabase(PostgreSQL) - Apresentação user:login/profile
 | 24.abr | Banco de dados SQLite/Supabase(PostgreSQL) - Apresentação user:login/profile
-| 30.abr |
+| 30.abr | Apresentação do projeto / Solução de dúvidas
 | 01.mai | FERIADO - Dia do trabalho
 | 07.mai | Simulado 1 - Presencial
 | 08.mai | Simulado 1 - Presencial
 | 14.mai | Semana nacional dos cursos
 | 15.mai | Semana nacional dos cursos
-| 21.mai |
+| 21.mai | Conferência SAVA / Solução de dúvidas
 | 22.mai |
 | 28.mai |
 | 29.mai |
 | 04.jun |
-| 05.jun |
+| 05.jun | Simulado 2 - Presencial
 | 11.jun | Simulado 2 - Presencial
-| 12.jun | Simulado 2 - Presencial
+| 12.jun | AV disciplinas Presenciais - Entrega e Apresentação Final do PROJETO EXTENSIONISTA
 | 18.jun | AV disciplinas Presenciais - Entrega e Apresentação Final do PROJETO EXTENSIONISTA
-| 19.jun | AV disciplinas Presenciais - Entrega e Apresentação Final do PROJETO EXTENSIONISTA
+| 19.jun | FERIADO
 | 25.jun | AVS disciplinas Presenciais - Prazo final dos projetos (com prejuízo de nota)
 | 26.jun | AVS disciplinas Presenciais - Prazo final dos projetos (com prejuízo de nota)
 | 02.jul | Fim do Semestre
